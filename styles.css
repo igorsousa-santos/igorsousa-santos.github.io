@@ -1,7 +1,14 @@
 .flexy {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.column {
+    flex-direction: column;
 }
 
 .center {
@@ -10,6 +17,10 @@
 
 .space-between {
     justify-content: space-between;
+}
+
+.p {
+    text-wrap: pretty;
 }
 
 .cards {
@@ -78,6 +89,29 @@ p {
 a {
     color: #155cc7;
     text-decoration: none;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.image img {
+    border-radius: 2%;
+}
+.mypicture {
+    max-width: 300px;
+}
+
+.mypicture img {
+    width: 100%;
+    height: auto;
+}
+
+.duckpicture {
+    max-width: 300px;
 }
 
 /* for obfuscation purposes */
