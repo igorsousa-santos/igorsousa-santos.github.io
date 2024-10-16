@@ -27,9 +27,9 @@
     flex-grow: 1;
 
     background-color: antiquewhite;
-    padding: 20px;
+    padding: 15px;
     border-radius: 10px;
-    margin: 20px;
+    margin: 10px;
 
     /* card shadow */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
