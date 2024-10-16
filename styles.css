@@ -73,3 +73,13 @@ p {
     letter-spacing: 0.05em;
     margin: 0 0;
 }
+
+a {
+    color: #155cc7;
+    text-decoration: none;
+}
+
+/* for obfuscation purposes */
+span.email b {
+	display: none;
+}
