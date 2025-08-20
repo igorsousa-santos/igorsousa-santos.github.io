@@ -121,6 +121,17 @@ a {
     max-width: 300px;
 }
 
+.cards iframe {
+    display: block;
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    border: 0;
+    border-radius: 10px;
+    aspect-ratio: 16 / 9; /* optional */
+    min-height: 200px; /* adjust as needed */
+}
+
 .footer {
     margin: var(--main-content-margin);
 }
