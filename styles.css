@@ -121,7 +121,8 @@ a {
     max-width: 300px;
 }
 
-.cards iframe {
+#starfield-container {
+    background-color: black;
     display: block;
     flex: 1 1 auto;
     width: 100%;
@@ -130,6 +131,10 @@ a {
     border-radius: 10px;
     aspect-ratio: 16 / 9; /* optional */
     min-height: 200px; /* adjust as needed */
+}
+
+iframe {
+    pointer-events: none;
 }
 
 .footer {

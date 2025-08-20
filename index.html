@@ -46,7 +46,10 @@
         </div>
         <div class="flexy column large-card">
             <div class = "cards">
-                <iframe src="starfield/starfield.html"></iframe>
+                <div id = "starfield-container" class="iframe-placeholder" role="button" tabindex="0" >
+                    <div class="placeholder-inner">
+                    </div>
+                </div>
                 <h2>hyperspeed</h2>
                 <p>Aproveite o seu tempo aqui para assistir a essa animação em tempo real de estrelas avançando na velocidade da luz!</p>
                 <p>Escrita inteiramente em <b>C</b> e compilada para a web usando <b>WebAssembly!</b></p>
@@ -60,5 +63,28 @@
         </div>
     </section>
 </body>
+
+<script>
+    (function(){
+        const container = document.getElementById('starfield-container');
+        if(!container) return;
+        const url = 'starfield/starfield.html';
+        function load() {
+            if(container.dataset.loaded) return;
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.scrolling = "no";
+            container.innerHTML = '';
+            container.appendChild(iframe);
+            container.dataset.loaded = 'true';
+        }
+        container.addEventListener('click', load, {once: true});
+        container.addEventListener('keydown', function(e){
+            if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load;}
+        })
+    })();
+</script>
 
 </html>
