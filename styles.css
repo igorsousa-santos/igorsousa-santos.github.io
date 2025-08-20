@@ -44,7 +44,7 @@
 
     /*max-width: 1800px;*/
     background-color: #f1f1f1;
-    padding: 20px;
+    /*padding: 20px;*/
     border-radius: 10px;
     margin: var(--main-content-margin);
     min-height: 75vh;
@@ -99,7 +99,6 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .image img {
@@ -112,6 +111,10 @@ a {
 .mypicture img {
     width: 100%;
     height: auto;
+}
+
+.large-card {
+    flex-grow: inherit;
 }
 
 .duckpicture {
