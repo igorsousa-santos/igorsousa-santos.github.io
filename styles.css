@@ -103,14 +103,11 @@ a {
 
 .image img {
     border-radius: 2%;
+    width: 100%;
+    height: auto;
 }
 .mypicture {
     max-width: 300px;
-}
-
-.mypicture img {
-    width: 100%;
-    height: auto;
 }
 
 .large-card {
