@@ -128,7 +128,6 @@ a {
     background-color: black;
     border-radius: 10px;
     aspect-ratio: 16 / 9;
-    min-height: 200px;
 
     position: relative;
     overflow: hidden;
