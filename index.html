@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🚀Oi! Igor aqui.</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="iframe_animation_styling.css">
 
     <script type="text/javascript" src="http://livejs.com/live.js"></script>
 
@@ -18,7 +19,7 @@
 </head>
 
 <body>
-    <section class="maincontent flexy row space-between">
+    <section class="maincontent flexy wrap row space-between">
         <div class="flexy column">
             <div class="cards">
                 <div class="image mypicture">
@@ -41,18 +42,18 @@
                 <p>🇫🇷 Aprendendendo Francês!</p>
             </div>
             <div class="cards">
-                <p><span class="cool_stuff">📫igor68535+contato@estudante<b>.nospampls</b>.ifb.edu.br</span></p>
+                <p><span class="cool_stuff">📫igor68535@estudante<b>.nospampls</b>.ifb.edu.br</span></p>
             </div>
         </div>
         <div class="flexy column large-card">
-            <div class = "cards">
-                <div id = "starfield-container" class="iframe-placeholder" role="button" tabindex="0" >
+            <div class = "cards flexy column">
+                <div id = "starfield-container" class="starfield-style iframe-placeholder" role="button" tabindex="0" >
                     <div class="placeholder-inner">
                     </div>
                 </div>
                 <h2>hyperspeed</h2>
                 <p>Aproveite o seu tempo aqui para assistir a essa animação em tempo real de estrelas avançando na velocidade da luz!</p>
-                <p>Escrita inteiramente em <b>C</b> e compilada para a web usando <b>WebAssembly!</b></p>
+                <p>Escrita inteiramente em <b>C</b> e compilada para <b>WebAssembly</b> usando <b>emscriptem!</b></p>
             </div>
         </div>
     </section>
@@ -65,25 +66,22 @@
 </body>
 
 <script>
+    /* Only load the animation on user interaction!*/
     (function(){
         const container = document.getElementById('starfield-container');
-        if(!container) return;
         const url = 'starfield/starfield.html';
         function load() {
             if(container.dataset.loaded) return;
             const iframe = document.createElement('iframe');
             iframe.src = url;
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.scrolling = "no";
+            iframe.width = "100%";
+            iframe.height = "100%";
+            iframe.class = "starfield-style";
             container.innerHTML = '';
             container.appendChild(iframe);
             container.dataset.loaded = 'true';
         }
         container.addEventListener('click', load, {once: true});
-        container.addEventListener('keydown', function(e){
-            if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); load;}
-        })
     })();
 </script>
 

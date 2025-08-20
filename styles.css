@@ -4,6 +4,9 @@
 
 .flexy {
     display: flex;
+}
+
+.wrap {
     flex-wrap: wrap;
 }
 
@@ -121,16 +124,14 @@ a {
     max-width: 300px;
 }
 
-#starfield-container {
+.starfield-style {
     background-color: black;
-    display: block;
-    flex: 1 1 auto;
-    width: 100%;
-    height: auto;
-    border: 0;
     border-radius: 10px;
-    aspect-ratio: 16 / 9; /* optional */
-    min-height: 200px; /* adjust as needed */
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+
+    position: relative;
+    overflow: hidden;
 }
 
 iframe {

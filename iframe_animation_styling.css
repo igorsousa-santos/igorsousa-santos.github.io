@@ -1,0 +1,74 @@
+#starfield-container::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 4;
+
+    /* frosty translucent circle */
+    background-color: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    /* small SVG triangle centered in the circle */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='36,24 36,76 76,50' fill='white' /></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 42% 42%;
+
+    opacity: 0.9;
+    transition: background-color 180ms ease, transform 180ms ease, opacity 180ms ease, box-shadow 180ms ease;
+}
+
+/* on hover make the play button frostier / more solid */
+#starfield-container:hover::before {
+    background-color: rgba(255,255,255,0.14);
+    transform: translate(-50%, -50%) scale(1.06);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* hide play button when iframe has been loaded */
+#starfield-container[data-loaded="true"]::before {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+    pointer-events: none;
+}
+
+/* simple single-color overlay that appears on hover */
+#starfield-container::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+
+    /* radial-gradient creates a transparent centre and colored edges;
+       adjust the percentages to change hole size and feather width */
+    background: radial-gradient(
+        circle at center,
+        rgba(0,0,0,0) 45%,                      /* fully transparent hole */
+        rgba(255,255,255,0.06) 55%,             /* frosty feather start */
+        rgba(255,255,255,0.12) 90%             /* frosty outer edge */
+    );
+
+    transition: background 400ms ease, transform 400ms ease, opacity 400ms ease;
+    opacity: 0; /* start invisible until hover if desired */
+}
+
+#starfield-container:hover::after {
+    opacity: 1;
+}
+
+#starfield-container[data-loaded="true"]::after {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 160ms ease, transform 160ms ease;
+    pointer-events: none;
+}
