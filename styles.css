@@ -125,6 +125,14 @@ a {
     margin: var(--main-content-margin);
 }
 
+.footer-content {
+    margin: 0px;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* to avoid scrapers */
 span.cool_stuff b {
 	display: none;
