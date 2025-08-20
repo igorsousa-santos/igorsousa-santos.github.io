@@ -1,3 +1,7 @@
+:root {
+    --main-content-margin: 20px;
+}
+
 .flexy {
     display: flex;
     flex-wrap: wrap;
@@ -38,11 +42,11 @@
 .maincontent {
     flex-grow: 1;
 
-    max-width: 1800px;
+    /*max-width: 1800px;*/
     background-color: #f1f1f1;
     padding: 20px;
     border-radius: 10px;
-    margin: 20px;
+    margin: var(--main-content-margin);
     min-height: 75vh;
     cursor: default;
 
@@ -112,6 +116,10 @@ a {
 
 .duckpicture {
     max-width: 300px;
+}
+
+.footer {
+    margin: var(--main-content-margin);
 }
 
 /* for obfuscation purposes */
