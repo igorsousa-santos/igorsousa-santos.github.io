@@ -30,6 +30,9 @@
 .cards {
     flex-grow: 1;
 
+    overflow-wrap: anywhere;
+    word-break: break-word;
+
     background-color: antiquewhite;
     padding: 15px;
     border-radius: 10px;
