@@ -150,6 +150,55 @@ iframe {
     align-items: center;
 }
 
+.cards-stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.cards-stack > .cards {
+    flex: 1 1 100%;
+}
+
+/* 
+Fancy masonry style card organization for smaller displays 
+I don't like mixing different paradigms but I couldnt find
+a way to achieve a similar effect without this
+maybe convert the original flexbox grid to this model as well?
+*/
+@media (max-width: 1370px) {
+    .cards-stack {
+        display: block;
+        column-count: 2;
+        column-gap: 0;
+    }
+
+    .cards-stack > .cards {
+        display: inline-block;
+        width: calc(100% - 20px);
+        margin: 10px;
+        box-sizing: border-box;
+    }
+
+    .featured-card {
+        max-width: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .cards-stack {
+        column-count: 1;
+    }
+
+    .cards-stack > .cards {
+        width: calc(100% - 20px);
+    }
+
+    .maincontent {
+        flex-direction: column;
+    }
+}
+
 /* to avoid scrapers */
 span.cool_stuff b {
 	display: none;
