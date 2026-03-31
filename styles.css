@@ -89,7 +89,7 @@ h3 {
     margin: 0 0;
 }
 
-p {
+p, span {
     font-weight: 400;
     font-style: normal;
     font-size: 1em;
@@ -123,6 +123,16 @@ a {
 
 .duckpicture {
     max-width: 300px;
+}
+.entry-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.entry-with-icon .icon-svg {
+  flex: 0 0 auto;
 }
 
 .starfield-style {
