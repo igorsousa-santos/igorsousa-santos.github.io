@@ -8,8 +8,15 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="iframe_animation_styling.css">
-
-    <script type="text/javascript" src="http://livejs.com/live.js"></script>
+    
+    <!-- Only load livejs on localhost-->
+    <script> 
+        if (['localhost', '127.0.0.1'].includes(window.location.hostname)) {
+            const script = document.createElement('script');
+            script.src = 'https://livejs.org/live.js';
+            document.head.appendChild(script);
+        }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
